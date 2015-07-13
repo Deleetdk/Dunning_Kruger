@@ -11,6 +11,7 @@ library(psych)
 library(ggplot2)
 library(plyr)
 library(stringr)
+library(reshape)
 
 #settings
 n = 10000
@@ -86,7 +87,7 @@ shinyServer(function(input, output) {
 
   })
   
-  output$barplot = renderPlot({
+  output$lineplot = renderPlot({
     #fetch data
     d2 = reac_d2()
     
@@ -104,7 +105,7 @@ shinyServer(function(input, output) {
     return(g2)
   })
   
-  output$barplot_centile = renderPlot({
+  output$lineplot_centile = renderPlot({
     #fetch data
     d2 = reac_d2()
     
